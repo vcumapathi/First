@@ -1,0 +1,34 @@
+  <md-toolbar class="md-menu-toolbar">
+    <div layout="row">
+      <div>
+        <h2 class="md-toolbar-tools">Cateogry</h2>
+        <md-menu-bar>
+          <md-menu>
+  
+          </md-menu>
+        </md-menu-bar>
+      </div>
+    </div>
+  </md-toolbar>
+<md-content layout="row" layout-align="center center" style="width: 100%; padding-top: 50px;">
+    <md-card flex="initial" class="tb-login-card" md-theme="tb-dark">
+        <md-card-title>
+            <md-card-title-text>
+                <span  class="md-headline">Category</span>
+            </md-card-title-text>
+        </md-card-title>
+     <md-card-content>
+            <form class="login-form" >
+                <div layout="column" layout-padding="" id="toast-parent">
+                    <span style="height: 50px;"></span>
+                    <md-input-container class="md-block">
+                        <label >cateogry</label>
+                        <input id="username-input" type="text" autofocus ng-model="cat.name"/>
+                    </md-input-container>
+                  
+                    <md-button class="md-raised" type="submit" ng-click="saveCat(cat)">Save </md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

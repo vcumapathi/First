@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manager Home</title>
+<style type="text/css">
+.md-datepicker-input-container {
+   /* width: 250px;*/
+}
+</style>
+</head>
+<body>
+
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs="" flex-gt-xs="50" layout="column">
+     <form name="projectForm" ng-submit="saveLeavesMaster(leaves)">
+      <md-card>
+        <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Apply Leave</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+        
+
+      <div layout="row">
+        <md-input-container flex="50">
+          <label>PL Balance</label>
+          <input required="" name="pl" ng-model="leaves.pl" disabled>
+          
+        </md-input-container>
+
+         <md-input-container flex="50">
+          <label>SL Balance</label>
+          <input required="" name="sl" ng-model="leaves.pl" disabled>
+         
+        </md-input-container>
+      </div>
+            <div layout="row">
+        <md-input-container flex="50">
+          <label>Reporting Authority</label>
+          <input required="" name="reportingOne" ng-model="leaves.reportingOne" disabled>
+          
+        </md-input-container>
+
+         <md-input-container flex="50">
+          <label>Secondary Managers</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber">
+          
+        </md-input-container>
+      </div>
+
+     
+        <div layout="row">
+        <md-input-container  flex="50">
+            <label>From Date</label>
+            <md-datepicker ng-model="leaves.fromDate"></md-datepicker>
+          </md-input-container>
+ <md-input-container  flex="50">
+            <label>To Date</label>
+            <md-datepicker ng-model="leaves.toDate"></md-datepicker>
+          </md-input-container>
+      
+      </div>
+      <div layout="row">
+       <md-input-container flex="50">
+          <label>Leave Type</label>
+          <md-select name="leaveType" ng-model="leaves.leaveType" required="">
+            <md-option value="Casual Leave">Casual Leave</md-option>
+            <md-option value="Privilege Leave">Privilage Leave</md-option>
+           
+          </md-select>
+        </md-input-container>
+        
+          <md-input-container flex="50">
+          <label>Contact No During Leave</label>
+          <input required="" name="emergencyNumber" ng-model="leaves.emergencyNumber"
+           minlength="10" maxlength="10"  ng-pattern="/^[0]?[789]\d{9}$/">
+         
+        </md-input-container>
+        </div>
+      <md-input-container class="md-block">
+          <label>Reason</label>
+          <textarea ng-model="leaves.reason" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+        </md-input-container>
+
+      
+        <md-input-container class="md-block">
+        <label>Location of the stay</label>
+        <input required="" type="text" name="location" ng-model="leaves.location">
+
+      </md-input-container>
+   
+
+    
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+        <!--   <md-button>Action 1</md-button> -->
+         <md-button class="md-raised md-primary" type="submit">Submit</md-button>
+        </md-card-actions>
+      </md-card>
+     </form>
+    </div>
+  </md-content>
+</body>
+</html>

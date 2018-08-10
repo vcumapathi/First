@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manager Home</title>
+<style type="text/css">
+.md-datepicker-input-container {
+	width: 250px;
+}
+</style>
+</head>
+<body>
+	<md-content class="md-padding" layout-xs="column" layout="row">
+	<div flex-xs="" flex-gt-xs="50" layout="column">
+				<form name="projectForm" ng-submit="saveLeaves(leaves)">
+		
+		<md-card> 
+		<md-card-title> <md-card-title-text>
+		<span class="md-headline">Assign Leaves to Employee</span> 
+		</md-card-title-text> </md-card-title> <md-card-content>
+
+			<div layout="row">
+				<md-input-container flex="50"> <label>SL
+					Balance</label> <input required="" name="sl" ng-model="leaves.sl">
+
+				</md-input-container>
+
+				<md-input-container flex="50"> <label>PL
+					Balance</label> <input required="" name="pl" ng-model="leaves.pl">
+
+				</md-input-container>
+			</div>
+			<md-input-container class="md-block"> <label>Select
+				Employee</label> <md-select ng-model="leaves.employeeId"> <md-option
+				ng-repeat="employee in employees" value="{{employee.employeeId}}">
+			{{employee.name}} - {{employee.employeeId}} </md-option> </md-select> </md-input-container>
+		
+		</md-card-content> <md-card-actions layout="row" layout-align="end center">
+		<!--   <md-button>Action 1</md-button> --> <md-button
+			class="md-raised md-primary" type="submit">Submit</md-button> 
+			</md-card-actions> 
+			</md-card>
+
+	</div>
+	</form>
+	</md-content>
+</body>
+</html>

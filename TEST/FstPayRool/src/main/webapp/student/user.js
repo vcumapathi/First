@@ -1,0 +1,1 @@
+angular.module('user',['ngMaterial', 'ngMessages', 'material.svgAssetsCache','ngFileUpload']);

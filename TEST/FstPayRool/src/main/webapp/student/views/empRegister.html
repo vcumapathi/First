@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employee Registration</title>
+<style>
+.inputdemoErrors .inputErrorsApp {
+  min-height: 48px; }
+
+.inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%; }
+    </style>
+</head>
+<body>
+<div ng-include="'./student/views/home.html'"></div>
+<md-content layout="row" layout-align="center center" style="width: 100%;">
+    <md-card flex="initial" class="tb-register-card" md-theme="tb-dark">
+        <md-card-title>
+            <md-card-title-text>
+                <span  class="md-headline">Employee Registration </span>
+            </md-card-title-text>
+        </md-card-title>
+     <md-card-content>
+    <form name="projectForm" ng-submit="saveEmployee(employee)">
+
+      <md-input-container class="md-block">
+        <label>Name</label> <input md-maxlength="30" required="" md-no-asterisk=""
+				name="description" ng-model="employee.name">
+        <div ng-messages="projectForm.name.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The name must be less than 30 characters long.</div>
+          
+        </div>
+      </md-input-container>
+
+      <div layout="row">
+        <md-input-container flex="50">
+          <label>Mobile Number</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber"
+           minlength="10" maxlength="10"  ng-pattern="/^[0]?[789]\d{9}$/">
+          <div ng-messages="projectForm.mobileNumber.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="minlength">Your mobile number must be 10 characters long.</div>
+            <div ng-message="pattern">Enter valid mobile number.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container flex="50">
+          <label>Gender</label>
+          <md-select name="gender" ng-model="employee.gender" required="">
+            <md-option value="male">Male</md-option>
+            <md-option value="female">Female</md-option>
+            <md-option value="other">Other</md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+ <md-input-container class="md-block">
+        <label>Alternate Number</label> <input md-no-asterisk=""
+				name="alternateNumber" ng-model="employee.alternateNumber">
+        <div ng-messages="projectForm.alternateNumber.$error">
+          <div ng-message="md-maxlength">Your mobile number must be 10 characters long.</div>
+          
+        </div>
+      </md-input-container>
+      
+
+  <!--     <md-input-container class="md-block">
+        <label>Hourly Rate (USD)</label>
+        <input required="" type="number" step="any" name="rate" ng-model="employee.rate" min="800"
+         max="4999" ng-pattern="/^1234$/">
+
+        <div ng-messages="projectForm.rate.$error" multiple="" md-auto-hide="false">
+          <div ng-message="required">
+            You've got to charge something! You can't just <b>give away</b> a Missile Defense
+            System.
+          </div>
+
+          <div ng-message="min">
+            You should charge at least $800 an hour. This job is a big deal... if you mess up,
+            everyone dies!
+          </div>
+
+          <div ng-message="pattern">
+            You should charge exactly $1,234.
+          </div>
+
+          <div ng-message="max">
+            {{projectForm.rate.$viewValue | currency:"$":0}} an hour? That's a little ridiculous. I
+            doubt even Bill Clinton could afford that.
+          </div>
+        </div>
+      </md-input-container> -->
+
+    
+
+    <!--   <md-input-container class="md-block">
+        <md-switch class="md-primary" name="special" ng-model="employee.special" required="">
+          Enable special options.
+        </md-switch>
+        <div ng-messages="projectForm.special.$error" multiple="">
+          <div ng-message="required">
+            You must enable all special options before you can proceed.
+          </div>
+        </div>
+      </md-input-container> -->
+      
+        <div layout="row">
+        <md-input-container  flex="60">
+            <label>Date of Birth</label>
+            <md-datepicker ng-model="employee.dateOfBirth"></md-datepicker>
+          </md-input-container>
+
+        <md-input-container flex="40">
+          <label>Blood Group</label>
+          <md-select name="bloodGroup" ng-model="employee.bloodGroup" required="">
+            <md-option value="A+">A+</md-option>
+            <md-option value="A-">A-</md-option>
+            <md-option value="B+">B+</md-option>
+            <md-option value="B-">B-</md-option>
+            <md-option value="AB+">AB+</md-option>
+             <md-option value="AB-">AB-</md-option>
+            <md-option value="O+">O+</md-option>
+            <md-option value="O-">O-</md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <md-input-container class="md-block">
+        <label>Email</label>
+        <input required="" type="email" name="email" ng-model="employee.email"
+         minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/">
+
+        <div ng-messages="projectForm.clientEmail.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div>
+      </md-input-container>
+          <div layout="row">   
+        <md-input-container flex="50">
+        <label>Password</label>
+        <input required="" type="password" name="password" ng-model="employee.password"
+         minlength="6" maxlength="30">
+
+       <!--  <div ng-messages="projectForm.password.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div> -->
+      </md-input-container>
+        <md-input-container flex="50">
+        <label>Confirm Password</label>
+        <input required="" type="password" name="confirmPassword" ng-model="employee.confirmPassword"
+         minlength="6" maxlength="30">
+
+     <!--    <div ng-messages="projectForm.confirmPassword.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength']">
+            Your email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div> -->
+      </md-input-container>
+      </div>
+        <md-input-container class="md-block">
+        <md-checkbox name="tos" ng-model="employee.tos" required="">
+          I accept the terms of service.
+        </md-checkbox>
+        <div ng-messages="projectForm.tos.$error" multiple="" md-auto-hide="false">
+          <div ng-message="required">
+            You must accept the terms of service before you can proceed.
+          </div>
+        </div>
+      </md-input-container>
+      <div>
+     
+        <md-button class="md-raised md-primary" type="submit">Submit</md-button>
+      </div> 
+
+    </form>
+          </md-card-content>
+    </md-card>
+</md-content>
+</body>
+</html>

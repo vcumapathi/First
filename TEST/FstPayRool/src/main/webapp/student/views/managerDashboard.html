@@ -1,0 +1,124 @@
+<div  layout="column" style="height:1000px;" ng-cloak="" class="sidenavdemoBasicUsage" ng-app="">
+
+  <section layout="row" flex="">
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding="" >
+        <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+          Close Sidenav Left
+        </md-button>
+        <p hide="" show-gt-md="">
+          <ul>
+          <li>
+          <md-input-container class="md-block"> <label>Select
+				</label> <md-select ng-model="leaves.employeeId"> <md-option
+				ng-repeat="recipe in recipes" value="{{recipe.recipeId}}">
+			{{recipe.recipeName}} - {{recipe.recipeId}} </md-option> </md-select> </md-input-container>
+		
+		 <md-card-actions layout="row" layout-align="end center">
+		<!--   <md-button>Action 1</md-button> --> <md-button
+			class="md-raised md-primary" type="submit">Submit</md-button> 
+			</md-card-actions> 
+          </li>
+           <li>
+            <md-card-actions layout="row" layout-align="end center">
+		 <md-button ng-click="showme=true"
+			class="md-raised md-primary" >Add </md-button> 
+			</md-card-actions> 
+           </li>
+          </ul>
+        </p>
+      </md-content>
+
+    </md-sidenav>
+
+    <md-content flex="" layout-padding="">
+
+      <div layout="column" layout-align="top center">
+      
+      <div>
+      Welcome
+      </div>
+      
+        <div ng-show="showme">
+        
+     <md-content layout="row" layout-align="center center" style="width: 100%;">
+    <md-card flex="initial" class="tb-register-card" md-theme="tb-dark">
+        <md-card-title>
+            <md-card-title-text>
+                <span  class="md-headline">Employee Registration </span>
+            </md-card-title-text>
+        </md-card-title>
+     <md-card-content>
+    <form name="projectForm" >
+
+      <md-input-container class="md-block">
+        <label>Name</label> <input md-maxlength="30" required="" md-no-asterisk=""
+				name="recipeName" ng-model="employee.recipeName">
+        <div ng-messages="projectForm.recipeName.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The name must be less than 30 characters long.</div>
+          
+        </div>
+      </md-input-container>
+
+    
+ <md-input-container class="md-block">
+        <label>Ingredient 1</label> <input md-no-asterisk=""
+				name="ingredientOne" ng-model="employee.ingredientOne">
+        <div ng-messages="projectForm.ingredientOne.$error">
+          <div ng-message="md-maxlength">Your mobile number must be 10 characters long.</div>
+          
+        </div>
+      </md-input-container>
+
+ <md-input-container class="md-block">
+        <label>Ingredient 2</label> <input md-no-asterisk=""
+				name="ingredientTwo" ng-model="employee.ingredientTwo">
+        <div ng-messages="projectForm.ingredientTwo.$error">
+          <div ng-message="md-maxlength">Your mobile number must be 10 characters long.</div>
+          
+        </div>
+      </md-input-container>
+       <md-input-container class="md-block">
+        <label>Ingredient 3</label> <input md-no-asterisk=""
+				name="ingredientThree" ng-model="employee.ingredientThree">
+        <div ng-messages="projectForm.ingredientThree.$error">
+          <div ng-message="md-maxlength">Your mobile number must be 10 characters long.</div>
+          
+        </div>
+      </md-input-container>
+       <md-input-container class="md-block">
+        <label>Ingredient 4</label> <input md-no-asterisk=""
+				name="ingredientFour" ng-model="employee.ingredientFour">
+        <div ng-messages="projectForm.ingredientFour.$error">
+          <div ng-message="md-maxlength">Your mobile number must be 10 characters long.</div>
+          
+        </div>
+      </md-input-container>
+      
+      <div>
+        <md-button class="md-raised md-primary" type="submit" ng-click="saveDetails(employee)">Submit</md-button>
+      </div> 
+
+    </form>
+          </md-card-content>
+    </md-card>
+</md-content>
+        
+        </div>
+      </div>
+
+      <div flex=""></div>
+
+    </md-content>
+
+   
+
+  </section>
+
+</div>

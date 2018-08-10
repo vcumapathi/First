@@ -1,0 +1,73 @@
+  <md-toolbar class="md-menu-toolbar">
+    <div layout="row">
+     <!--  <md-toolbar-filler layout="" layout-align="center center">
+        <md-icon md-svg-icon="communication:business"></md-icon>
+      </md-toolbar-filler> -->
+      <div>
+        <h2 class="md-toolbar-tools">Mission Statement</h2>
+        <md-menu-bar>
+          <md-menu>
+          <!--   <button aria-label="Open menu" ng-click="$mdMenu.open($event)">
+              Organizations
+            </button> -->
+         <!--    <md-menu-content width="3">
+              <md-menu-item ng-repeat="org in ctrl.organizations">
+                <md-menu class="nested-menu">
+                  <md-button ng-click="ctrl.onClick(org.department)">{{ org.department }}</md-button>
+                  <md-menu-content width="3">
+                    <md-menu-item ng-repeat="manager in org.managers">
+                      <md-menu>
+                        <md-button ng-click="ctrl.onClick(manager.name)">{{ manager.name }}</md-button>
+                        <md-menu-content width="2">
+                          <md-menu-item ng-repeat="person in manager.reports">
+                            <md-button ng-click="ctrl.onClick(person.name)">{{ person.name }}</md-button>
+                          </md-menu-item>
+                        </md-menu-content>
+                      </md-menu>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </md-menu-item>
+            </md-menu-content> -->
+          </md-menu>
+        </md-menu-bar>
+      </div>
+    </div>
+  </md-toolbar>
+<md-content layout="row" layout-align="center center" style="width: 100%; padding-top: 50px;">
+    <md-card flex="initial" class="tb-login-card" md-theme="tb-dark">
+        <md-card-title>
+            <md-card-title-text>
+                <span  class="md-headline">log in</span>
+            </md-card-title-text>
+        </md-card-title>
+     <md-card-content>
+            <form class="login-form" ng-submit="loginEmp(user)">
+                <div layout="column" layout-padding="" id="toast-parent">
+                    <span style="height: 50px;"></span>
+                    <md-input-container class="md-block">
+                        <label >user name</label>
+                        <!-- <md-icon aria-label="{{ 'login.username' |  }}" class="material-icons">
+                            email
+                        </md-icon> -->
+                        <input id="username-input" type="text" autofocus ng-model="user.mobileNumber"/>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label >password</label>
+                       <!--  <md-icon aria-label="{{ 'common.password' |  }}" class="material-icons">
+                            lock
+                        </md-icon> -->
+                        <input id="password-input" type="password" ng-model="user.password"/>
+                    </md-input-container>
+                    <div layout-gt-sm="column" layout-align="space-between stretch">
+                        <div layout-gt-sm="column" layout-align="space-between end">
+                            <md-button ui-sref="login.resetPasswordRequest">forgot-password
+                            </md-button>
+                        </div>
+                    </div>
+                    <md-button class="md-raised" type="submit">login </md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>

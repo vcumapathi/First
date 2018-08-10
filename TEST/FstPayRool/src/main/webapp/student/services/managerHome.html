@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manager Home</title>
+<style type="text/css">
+.md-datepicker-input-container {
+    width: 250px;
+}
+</style>
+</head>
+<body>
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs="" flex-gt-xs="50" layout="column">
+      <md-card>
+        <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Apply Leave</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+         <form name="projectForm" ng-submit="saveEmployee(employee)">
+
+      <div layout="row">
+        <md-input-container flex="50">
+          <label>PL Balance</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber"
+           minlength="10" maxlength="10"  ng-pattern="/^[0]?[789]\d{9}$/">
+          <div ng-messages="projectForm.mobileNumber.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="minlength">Your mobile number must be 10 characters long.</div>
+            <div ng-message="pattern">Enter valid mobile number.</div>
+          </div>
+        </md-input-container>
+
+         <md-input-container flex="50">
+          <label>SL Balance</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber"
+           minlength="10" maxlength="10"  ng-pattern="/^[0]?[789]\d{9}$/">
+          <div ng-messages="projectForm.mobileNumber.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="minlength">Your mobile number must be 10 characters long.</div>
+            <div ng-message="pattern">Enter valid mobile number.</div>
+          </div>
+        </md-input-container>
+      </div>
+            <div layout="row">
+        <md-input-container flex="50">
+          <label>Reporting Authority</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber">
+          
+        </md-input-container>
+
+         <md-input-container flex="50">
+          <label>Secondary Managers</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber">
+          
+        </md-input-container>
+      </div>
+
+     
+        <div layout="row">
+        <md-input-container  flex="50">
+            <label>From Date</label>
+            <md-datepicker ng-model="employee.dateOfBirth"></md-datepicker>
+          </md-input-container>
+ <md-input-container  flex="50">
+            <label>To Date</label>
+            <md-datepicker ng-model="employee.dateOfBirth"></md-datepicker>
+          </md-input-container>
+      
+      </div>
+      <div layout="row">
+       <md-input-container flex="50">
+          <label>Blood Group</label>
+          <md-select name="bloodGroup" ng-model="employee.bloodGroup" required="">
+            <md-option value="A+">A+</md-option>
+            <md-option value="A-">A-</md-option>
+            <md-option value="B+">B+</md-option>
+           
+          </md-select>
+        </md-input-container>
+        
+          <md-input-container flex="50">
+          <label>Contact No</label>
+          <input required="" name="mobileNumber" ng-model="employee.mobileNumber"
+           minlength="10" maxlength="10"  ng-pattern="/^[0]?[789]\d{9}$/">
+         
+        </md-input-container>
+        </div>
+      <md-input-container class="md-block">
+          <label>Reason</label>
+          <textarea ng-model="user.biography" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+        </md-input-container>
+
+      
+        <md-input-container class="md-block">
+        <label>Location of the stay</label>
+        <input required="" type="password" name="confirmPassword" ng-model="employee.confirmPassword"
+         minlength="6" maxlength="30">
+
+      </md-input-container>
+   
+
+    </form>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+        <!--   <md-button>Action 1</md-button> -->
+         <md-button class="md-raised md-primary" type="submit">Submit</md-button>
+        </md-card-actions>
+      </md-card>
+     
+    </div>
+  </md-content>
+</body>
+</html>

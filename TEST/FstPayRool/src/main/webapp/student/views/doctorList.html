@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Doctor Home</title>
+<style type="text/css">
+.md-datepicker-input-container {
+	width: 250px;
+}
+</style>
+</head>
+<body>
+	<md-content class="md-padding" layout-xs="column" layout="row">
+	<div flex-xs="" flex-gt-xs="50" layout="column">
+				<form name="projectForm">
+		
+		<md-card> 
+		<md-card-title> <md-card-title-text>
+		<span class="md-headline">Doctor</span> 
+		</md-card-title-text> </md-card-title> <md-card-content>
+
+			<div layout="row">
+				<md-input-container flex="50"> <label>Name
+					</label> <input required="" name="name" ng-model="doctor.name">
+
+				</md-input-container>
+
+				<md-input-container flex="50"> <label>Mobile Number</label> <input required="" name="mobileNumber" ng-model="doctor.mobileNumber">
+
+				</md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container flex="50"> <label>Hospital Name
+					</label> <input required="" name="hospitalName" ng-model="doctor.hospitalName">
+
+				</md-input-container>
+
+				<md-input-container flex="50"> <label>Address</label> <input required="" name="address" ng-model="doctor.address">
+
+				</md-input-container>
+			</div>
+			doctor {{doctor}}
+			<md-input-container class="md-block"> <label>Select
+				Cateogry</label> <md-select ng-model="doctor.cId"> <md-option
+				ng-repeat="category in categories" value="{{category.categoryId}}" >
+			{{category.name}} </md-option> </md-select> </md-input-container>
+			
+			
+			 <md-input-container class="md-block">
+            <label>Photo Upload</label>
+         <input id="picture" label="Upload Images" name="picture" ngf-select="upload($file)" ng-model="picture" accept="image/*" ngf-max-size="5MB">
+          
+        </md-input-container>
+		 <img style="width:100%;" ngf-src="picture">
+		</md-card-content> <md-card-actions layout="row" layout-align="end center">
+		<!--   <md-button>Action 1</md-button> -->
+		 <md-button
+			class="md-raised md-primary" type="submit"  ng-click="saveDoctors(doctor,picture)">Save</md-button> 
+			</md-card-actions> 
+			</md-card>
+
+	</div>
+	</form>
+	</md-content>
+</body>
+</html>
